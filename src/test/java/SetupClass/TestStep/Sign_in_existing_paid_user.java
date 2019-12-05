@@ -1,5 +1,6 @@
 package SetupClass.TestStep;
 
+import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -76,9 +77,20 @@ public void user_download_any_product() throws InterruptedException  {
     Thread.sleep(2000);
     download_btn.click();
     Thread.sleep(2000);
+    driver.navigate().refresh();
     
 }
 
+@Then("^User Logout\\.$")
+public void user_Logout() throws Throwable {
+	 Thread.sleep(3000);
+	   
+	 driver.findElement(By.xpath("//a[contains(.,'Sign Out')]")).click();
+	 Thread.sleep(3000);
+	 
+	 
+	 
+}
 
 	
 }

@@ -1,3 +1,4 @@
+@9_sign_in_existing_paid_user
 Feature: Sign in with existing paid user
 Scenario: Test Sign in existing paid user
 
@@ -6,3 +7,4 @@ Then user enter email and password epu
 Then user click on login button epu
 Then user navigate to complete deck from account dashboard page
 Then user download any product
+Then User Logout.

@@ -38,6 +38,12 @@ public class Facebook_existing_user_sign_in extends Set{
 	public void user_click_on_sign_in_with_facebook_button_old_fb() throws InterruptedException  {
 		
 		Thread.sleep(2000);
+		WebElement fb_link = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn'][contains(.,'Sign in with Facebook')]")));
+		Thread.sleep(2000);
+	    fb_link.click();
+		Thread.sleep(2000);
+		
+		Thread.sleep(2000);
 
 	    WebElement fb_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("email")));
 		Thread.sleep(2000);
@@ -60,7 +66,8 @@ public class Facebook_existing_user_sign_in extends Set{
 	@Then("^user go to free ppts page old fb$")
 	public void user_go_to_free_ppts_page_old_fb() throws InterruptedException  {
 	 
-		Thread.sleep(2000);
+		//free ppt pg
+		Thread.sleep(4000);
 		WebElement free_ppt_btn=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'Free PPTs')]")));
 		Thread.sleep(2000);
 	    free_ppt_btn.click();
@@ -72,15 +79,16 @@ public class Facebook_existing_user_sign_in extends Set{
 	public void user_download_a_free_ppt_old_fb() throws InterruptedException  {
 	 
 		Thread.sleep(2000);
-
+		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("li.product:nth-child(4) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);
 		
+		driver.navigate().refresh();
 		
 		// logout
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		try {
 			WebElement logout = driver.findElement(By.xpath("//a[contains(text(),'Sign Out')]"));
 			if (logout.isEnabled()) {

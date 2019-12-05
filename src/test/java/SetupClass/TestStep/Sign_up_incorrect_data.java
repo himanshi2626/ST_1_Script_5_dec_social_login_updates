@@ -72,7 +72,7 @@ public class Sign_up_incorrect_data extends Set{
 	    Thread.sleep(2000);
 	    WebElement new_captcha_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
 	    Thread.sleep(1000);
-	    new_captcha_signup.sendKeys("12345");
+	    new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
 	    Thread.sleep(2000);
 	    WebElement new_btn_signup = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".submit")));
 	    Thread.sleep(1000);
@@ -181,7 +181,7 @@ public class Sign_up_incorrect_data extends Set{
 		 
 		WebElement new_captcha_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
 		Thread.sleep(2000);
-	    new_captcha_signup.sendKeys("12345");
+	    new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
 	    Thread.sleep(2000);
 	}
 
@@ -222,7 +222,8 @@ public class Sign_up_incorrect_data extends Set{
 
 	@Then("^user download a free product$")
 	public void user_download_a_free_product() throws InterruptedException  {
-		driver.findElement(By.cssSelector("li.item:nth-child(12) > div:nth-child(1) > div:nth-child(2) > strong:nth-child(1) > span:nth-child(1) > a:nth-child(1)")).click();
+		//driver.findElement(By.xpath("//a[@class='product-item-link name-trim'][contains(.,'Information Technology Gantt Chart')]")).click();
+		driver.get("https://www.slideteam.net/bar-graphs-and-histograms-success-powerpoint-templates-themes.html");
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);

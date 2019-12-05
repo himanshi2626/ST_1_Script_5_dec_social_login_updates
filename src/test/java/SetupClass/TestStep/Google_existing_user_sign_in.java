@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By.ByXPath;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -92,7 +93,26 @@ public class Google_existing_user_sign_in extends Set {
 		Thread.sleep(3000);
 		driver.findElement(By.cssSelector("#clicking")).click();
 		Thread.sleep(3000);
+		
+		driver.navigate().refresh();
+		Thread.sleep(3000);
 	}
 
+	@Then("^logout pld gmail$")
+	public void logout_pld_gmail() throws Throwable {
+	   
+		Thread.sleep(2000);
+	    WebElement my_account_og = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'My Account')]")));
+	    Thread.sleep(2000);
+	   my_account_og.click();
+	    Thread.sleep(2000);
+   
+		 Thread.sleep(3000);
+		 WebElement sign_out = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(.,'Sign Out')]")));
+		 Thread.sleep(2000);
+		 sign_out.click();
+		 Thread.sleep(3000);
+		
+	}
 	
 }

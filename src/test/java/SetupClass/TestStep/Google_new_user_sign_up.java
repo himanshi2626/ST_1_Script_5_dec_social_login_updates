@@ -55,7 +55,7 @@ public class Google_new_user_sign_up extends Set {
 			
 		
 		}
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement gmail_email = wait.until(ExpectedConditions.elementToBeClickable(By.id("identifierId")));
 		Thread.sleep(2000);
 	    gmail_email.sendKeys("slidetech.qa@gmail.com");

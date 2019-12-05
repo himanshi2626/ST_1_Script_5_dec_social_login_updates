@@ -110,7 +110,7 @@ public class co_checkout extends Set{
 					// enter captcha
 					WebElement new_captcha_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
 					Thread.sleep(2000);
-				    new_captcha_signup.sendKeys("12345");
+				    new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
 					Thread.sleep(2000);
 				    
 				    // sign  up button
@@ -132,14 +132,15 @@ public class co_checkout extends Set{
 
 	@Then("^user is redirected to checkout page (\\d+)CO$")
 	public void user_is_redirected_to_checkout_page_CO(int arg1) throws Throwable {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 
 	@Then("^user proceed to pay with (\\d+)CO (\\d+)CO$")
 	public void user_proceed_to_pay_with_CO_CO(int arg1, int arg2) throws Throwable {
 	    
+		Thread.sleep(1400);
 		// select 2co option
-		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.id("tco_checkout")));
+		WebElement co_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='tco_checkout']")));
 		Thread.sleep(2000);
 	    co_btn.click();
 		Thread.sleep(3000);

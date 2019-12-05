@@ -16,7 +16,7 @@ import cucumber.api.java.en.Then;
 
 public class paypal_checkout extends Set {
 	
-	WebDriverWait wait = new WebDriverWait(driver,70);
+	WebDriverWait wait = new WebDriverWait(driver,100);
 
 	@Given("^user is already on Website Home Page pp$")
 	public void user_is_already_on_Website_Home_Page_pp() throws Throwable {
@@ -110,7 +110,7 @@ public class paypal_checkout extends Set {
 			// enter captcha
 			WebElement new_captcha_signup = wait.until(ExpectedConditions.elementToBeClickable(By.id("captcha_user_create")));
 			Thread.sleep(2000);
-		    new_captcha_signup.sendKeys("12345");
+		    new_captcha_signup.sendKeys("Aj7W2mtf9namwf55");
 			Thread.sleep(2000);
 		    
 		    // sign  up button
@@ -125,7 +125,7 @@ public class paypal_checkout extends Set {
 	public void user_is_redirected_to_pricing_page_and_choose_a_plan_to_pay_pp() throws Throwable {
 	   
 		// choose a plan
-		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@type='submit'][contains(.,'Join now')])[2]")));
+		 WebElement join_now_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[3]//div[3]//span[1]//form[1]//button[1]//span[1]")));
 			Thread.sleep(2000);
 		    join_now_btn.click();
 			Thread.sleep(5000);
@@ -135,14 +135,28 @@ public class paypal_checkout extends Set {
 	@Then("^user is redirected to checkout page pp$")
 	public void user_is_redirected_to_checkout_page_pp() throws Throwable {
 		Thread.sleep(2000);
+		try
+		{
+			WebElement cp_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='paypal_express']")));
+			Thread.sleep(2000);
+		    cp_btn.click();
+		    Thread.sleep(3000);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		Thread.sleep(1000);
 	}
 
 	@Then("^user proceed to pay with paypal pp$")
 	public void user_proceed_to_pay_with_paypal_pp() throws Throwable {
 	    
+		Thread.sleep(2000);
+		
 		// place order button 
-				 WebElement place_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(.,'Place Order')]")));
-					Thread.sleep(2000);
+				 WebElement place_order_btn  = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Place Order')]")));
+					Thread.sleep(1000);
 				    place_order_btn.click();
 					Thread.sleep(5000);
 

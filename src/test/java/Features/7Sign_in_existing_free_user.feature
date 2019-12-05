@@ -7,3 +7,4 @@ Then user enter email and password efu
 Then user click on login button efu
 Then user go to free ppts page efu
 Then user download a free ppt
+Then user logout efu.

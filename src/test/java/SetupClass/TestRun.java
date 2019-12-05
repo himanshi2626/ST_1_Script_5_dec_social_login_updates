@@ -9,8 +9,12 @@ import cucumber.api.junit.Cucumber;
 //import gherkin.formatter.MonochromeFormats;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"."},//tags= {"@facebook_existing_user_login"},
-plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json","usage:target/usage.jsonx","junit:target/cucumber.xml"})
+@CucumberOptions(features = {"."},//tags= {"@paypal_checkout"},
+plugin= {"pretty","html:target/site/cucumber-pretty","json:target/cucumber/cucumber.json","usage:target/usage.jsonx","junit:target/cucumber.xml"}//,
+//monochrome = true, //display the console output in a proper readable format
+//strict = true, //it will check if any step is not defined in step definition file
+//dryRun = false //to check the mapping is proper between feature file and step def file
+)
 
 
 public class TestRun {
