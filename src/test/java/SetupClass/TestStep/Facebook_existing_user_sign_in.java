@@ -23,6 +23,7 @@ public class Facebook_existing_user_sign_in extends Set{
 		driver.get(AppURL);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 		log.info("It's opening the website URL");
+		Thread.sleep(4000);
 
 		try {
 			driver.findElement(By.cssSelector("div.social-login-authentication-channel:nth-child(3) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)")).click();
@@ -37,7 +38,7 @@ public class Facebook_existing_user_sign_in extends Set{
 	@Then("^User click on sign in with facebook button old fb$")
 	public void user_click_on_sign_in_with_facebook_button_old_fb() throws InterruptedException  {
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement fb_link = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']")));
 		Thread.sleep(2000);
 	    fb_link.click();
