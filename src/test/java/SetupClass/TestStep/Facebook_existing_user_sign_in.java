@@ -38,7 +38,7 @@ public class Facebook_existing_user_sign_in extends Set{
 	public void user_click_on_sign_in_with_facebook_button_old_fb() throws InterruptedException  {
 		
 		Thread.sleep(2000);
-		WebElement fb_link = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn'][contains(.,'Sign in with Facebook')]")));
+		WebElement fb_link = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='btn btn-block btn-social btn-facebook social-btn']")));
 		Thread.sleep(2000);
 	    fb_link.click();
 		Thread.sleep(2000);
